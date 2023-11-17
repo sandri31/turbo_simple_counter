@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "habits#show"
+
   resources :habits, only: [:show] do
     member do
       post :plus
@@ -8,5 +10,4 @@ Rails.application.routes.draw do
 
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # root "posts#index"
 end
